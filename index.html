@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>수도권 청약 공고 지도 (2026-11-24 기준)</title>
+<title>수도권 청약 공고 지도 (2026-11-25 기준)</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <style>
   html, body, #map { margin: 0; padding: 0; width: 100%; height: 100%; font-family: -apple-system, BlinkMacSystemFont, "Noto Sans KR", sans-serif; }
@@ -24,10 +24,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 const items = [
   {id: 1, name: "부천대장 하우스토리 디센트 (A2BL)", type: "공공분양 · 경기 부천", sched: "특공 11.23 / 1순위 11.24 / 2순위 11.25", price: "59㎡ 6.13억 / 74㎡ 7.44억 / 84㎡ 8.11억", lat: 37.54206, lng: 126.77555, color: "#dc2626", url: "https://www.applyhome.co.kr/ai/aia/selectAPTLttotPblancDetail.do?houseManageNo=2026000457&pblancNo=2026000457"},
-  {id: 4, name: "수원 광교40 더포레스트 공가 매각", type: "LH 일반매각 · 경기 수원", sched: "11.23(월)~11.24(화)", price: "84.81㎡ 9.16~9.39억", lat: 37.30369, lng: 127.04637, color: "#dc2626", url: "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300021113&ccrCnntSysDsCd=03&uppAisTpCd=05&aisTpCd=05&mi=1027"},
   {id: 5, name: "아르뮤제자이", type: "민영 · 경기 안산", sched: "특공 11.23 / 1순위 11.24 / 2순위 11.25", price: "84㎡ 11.05억 / 99~104㎡ 12.4~14.08억", lat: 37.32065, lng: 126.84952, color: "#dc2626", url: "https://www.applyhome.co.kr/ai/aia/selectAPTLttotPblancDetail.do?houseManageNo=2026000576&pblancNo=2026000576"},
-  {id: 6, name: "잠실 래미안아이파크 (재공급)", type: "민영 재공급 · 서울 송파", sched: "11.24(화) 09:00~17:30", price: "43㎡ 11.05억 / 59㎡ 15.79억", lat: 37.51829, lng: 127.10137, color: "#dc2626", url: "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026930045&pblancNo=2026930045"},
-  {id: 7, name: "산곡역자이힐스테이트&하늘채 무순위", type: "민영 무순위 · 인천 부평", sched: "11.24(화) 09:00~17:30", price: "50~84㎡ 5.1~10.2억", lat: 37.50865, lng: 126.70303, color: "#dc2626", url: "https://www.applyhome.co.kr/"},
   {id: 8, name: "강동한강 디에트르 (임의)", type: "민영 임의공급 · 서울 강동", sched: "11.24(화)~11.25(수) 09:00~17:30", price: "59㎡ 11.03~11.35억 / 79~80㎡ 13.95~14.15억", lat: 37.55911, lng: 127.13169, color: "#dc2626", url: "https://www.applyhome.co.kr/"},
   {id: 9, name: "고양 한신더휴 퍼스트원", type: "민영 · 경기 고양", sched: "특공 11.30 / 1순위 12.01 / 2순위 12.02", price: "59~84㎡ 5.99~8.46억", lat: 37.62236, lng: 126.83604, color: "#2563eb", url: "https://www.applyhome.co.kr/ai/aia/selectAPTLttotPblancDetail.do?houseManageNo=2026000585&pblancNo=2026000585"},
   {id: 10, name: "왕숙 한신더휴 센텀 (A-17BL)", type: "공공분양 · 경기 남양주", sched: "특공 11.30 / 1순위 12.01 / 2순위 12.02", price: "59㎡ 5.99~6.07억", lat: 37.65065, lng: 127.16240, color: "#2563eb", url: "https://bizwave.kr/notice/applyhome_apt-2026000575"},
@@ -50,8 +47,8 @@ items.forEach(it => {
 const legend = L.control({position: 'topright'});
 legend.onAdd = () => {
   const div = L.DomUtil.create('div', 'legend');
-  div.innerHTML = '<b>수도권 청약 14건 (11/24 기준)</b><br>' +
-    '<span class="dot" style="background:#dc2626"></span>11/24~25 접수·마감<br>' +
+  div.innerHTML = '<b>수도권 청약 11건 (11/25 기준)</b><br>' +
+    '<span class="dot" style="background:#dc2626"></span>11/25 접수·마감<br>' +
     '<span class="dot" style="background:#2563eb"></span>11/30~12월 예정';
   return div;
 };
