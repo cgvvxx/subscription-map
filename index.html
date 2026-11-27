@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>수도권 청약 공고 지도 (2026-11-26 기준)</title>
+<title>수도권 청약 공고 지도 (2026-11-27 기준)</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <style>
   html, body, #map { margin: 0; padding: 0; width: 100%; height: 100%; font-family: -apple-system, BlinkMacSystemFont, "Noto Sans KR", sans-serif; }
@@ -30,7 +30,9 @@ const items = [
   {id: 13, name: "소사 휴먼빌 (소사본동)", type: "민영 · 경기 부천 소사구", sched: "특공 11.30 / 1순위 12.01 / 2순위 12.02", price: "59㎡ 4.94~5.59억 / 84㎡ 6.96~7.88억", lat: 37.47329, lng: 126.80123, color: "#2563eb", url: "https://www.applyhome.co.kr/ai/aia/selectAPTLttotPblancDetail.do?houseManageNo=2026000591&pblancNo=2026000591"},
   {id: 14, name: "판교TH212(2차) 무순위", type: "민영 무순위 · 경기 성남 분당", sched: "11.30(월)", price: "129㎡ 15.93억", lat: 37.37179, lng: 127.06707, color: "#2563eb", url: "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026910305&pblancNo=2026910305"},
   {id: 15, name: "더샵 분당하이스트(2차) 무순위", type: "민영 무순위 · 경기 성남 분당", sched: "11.30(월)", price: "74~84㎡ 23.52~29.81억", lat: 37.36735, lng: 127.11355, color: "#2563eb", url: "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026910304&pblancNo=2026910304"},
-  {id: 16, name: "이천 서희스타힐스 SKY 무순위", type: "민영 무순위 · 경기 이천", sched: "12.01(화)", price: "84㎡ 6.29~6.55억", lat: 37.27635, lng: 127.45574, color: "#2563eb", url: "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026910301&pblancNo=2026910301"}
+  {id: 16, name: "이천 서희스타힐스 SKY 무순위", type: "민영 무순위 · 경기 이천", sched: "12.01(화)", price: "84㎡ 6.29~6.55억", lat: 37.27635, lng: 127.45574, color: "#2563eb", url: "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026910301&pblancNo=2026910301"},
+  {id: 17, name: "청량리 롯데캐슬 하이루체 (재공급)", type: "민영 재공급 · 서울 동대문", sched: "12.02(수) 09:00~17:30", price: "59B 8.24억 (+승계 1,755만)", lat: 37.58709, lng: 127.04444, color: "#16a34a", url: "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026930047&pblancNo=2026930047"},
+  {id: 18, name: "향남역 그로브 스위첸 무순위", type: "민영 무순위 · 경기 화성", sched: "12.01(화) 09:00~17:30", price: "71㎡ 4.49억 (+확장비 1,300만)", lat: 37.11027, lng: 126.91433, color: "#16a34a", url: "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026910311&pblancNo=2026910311"}
 ];
 
 items.forEach(it => {
@@ -44,8 +46,9 @@ items.forEach(it => {
 const legend = L.control({position: 'topright'});
 legend.onAdd = () => {
   const div = L.DomUtil.create('div', 'legend');
-  div.innerHTML = '<b>수도권 청약 8건 (11/26 기준)</b><br>' +
-    '<span class="dot" style="background:#2563eb"></span>11/30~12월 예정';
+  div.innerHTML = '<b>수도권 청약 10건 (11/27 기준)</b><br>' +
+    '<span class="dot" style="background:#16a34a"></span>11/27 신규 (2건)<br>' +
+    '<span class="dot" style="background:#2563eb"></span>11/30~12월 예정 (8건)';
   return div;
 };
 legend.addTo(map);
